@@ -1,9 +1,18 @@
-//Minimalistic web server in nodeJS with Heroku deployment
+var express = require('express');
+var app = express();
 
-var dirWebRoot = 'public';
-var port = Number(process.env.PORT || 5000);
+app.set('port', (process.env.PORT || 5000));
 
-var connect = require('connect');
-connect().use(connect.static(dirWebRoot)).listen(port);
+app.use(express.static(__dirname + '/public'));
 
-console.log('Static web server runnin on port: ' + port);
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+app.get('/', function(request, response) {
+  response.render('pages/index');
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
