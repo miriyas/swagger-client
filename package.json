@@ -1,20 +1,32 @@
 {
-  "name": "nodejs-static-web-server",
+  "name": "Stayes API documents",
   "version": "0.0.1",
+  "description": "Stayes API documents via Heroku",
+  "engines": {
+    "node": "6.11.1"
+  },
   "private": true,
   "main": "server.js",
-  "repository":
-  { 
-	"type" : "git",
-	"url" : "https://github.com/pjmolina/swagger-client"
-  },
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "connect": "2.19.6"
+    "cors": "^2.8.2",
+    "ejs": "2.5.6",
+    "express": "4.15.2"
   },
-  "engines": {
-    "node": "0.10.x"
-  }
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miriyas/swagger-client"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
