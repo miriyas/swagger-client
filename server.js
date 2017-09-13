@@ -1,8 +1,10 @@
 var express = require('express');
+var cors = require('cors');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
+app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
